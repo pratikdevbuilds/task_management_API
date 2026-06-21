@@ -18,7 +18,7 @@ def get_password_hash(password):
     return password_hash.hash(password)
 
 def verify_password(plain_password, hashed_password):
-    return password_hash.verify(plain_password, hashed_password)
+    return password_hash.verify(plain_password,hashed_password)
 
 
 def register(body:Userschema,db:session):
@@ -67,7 +67,7 @@ def login_user(body:LoginSchema,db:session):
   
   token =jwt.encode({"id":user.id,"exp":exp_tm.timestamp()},settings.SECRET_KEY,settings.ALGORITHM)
   
-  print(token)
+  # print(token)
   return {"token":token}
 
 

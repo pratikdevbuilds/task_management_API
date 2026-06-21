@@ -13,6 +13,7 @@ class Userschemareponse(BaseModel):
   username:str
   email:str
   mob:int
+  
 
 class LoginSchema(BaseModel):
  

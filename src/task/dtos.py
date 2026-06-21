@@ -8,9 +8,9 @@ class TaskSchema(BaseModel):
 class TaskresponseSchema(BaseModel):
    id :int
    title:str
-   # description:str
-   # is_completed :bool
+   description:str
+   is_completed :bool
    model_config = {
         "from_attributes": True
     } 
- 
+   user_id :int |None =0
