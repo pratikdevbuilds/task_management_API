@@ -14,19 +14,19 @@ def create_task(body:TaskSchema,db=Depends(get_db),user:UserModel=Depends(user_a
 
 @task_routes.get("/all_task",status_code=status.HTTP_200_OK)
 def get_all_task(db=Depends(get_db),user:UserModel=Depends(user_authorization)): 
-  return controller.get_tasks(db)
+  return controller.get_tasks(db,user)
 
 
 
 @task_routes.get("/by_ones/{task_id}",status_code=status.HTTP_200_OK)
 def get_taskby_ones(task_id:int,db=Depends(get_db),user:UserModel=Depends(user_authorization)):
-  return controller.get_taskby_ones(task_id,db)
+  return controller.get_taskby_ones(task_id,db,user)
 
 
 
 @task_routes.put("/changes/{task_id}",status_code=status.HTTP_201_CREATED)
-def update_task(body:TaskSchema,task_id:int,db=Depends(get_db)):
-  return controller.update_task(body,task_id,db)
+def update_task(body:TaskSchema,task_id:int,db=Depends(get_db),user:UserModel=Depends(user_authorization)):
+  return controller.update_task(body,task_id,db,user)
 
 
 

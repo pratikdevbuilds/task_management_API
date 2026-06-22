@@ -123,3 +123,7 @@ Generating C:\Users\admin\Desktop\task_managment_API\migrations\env.py ...  done
 Generating C:\Users\admin\Desktop\task_managment_API\migrations\README ...  done
 Generating C:\Users\admin\Desktop\task_managment_API\migrations\script.py.mako ...  done
 Please edit configuration/connection/logging settings in C:\Users\admin\Desktop\task_managment_API\alembic.ini before proceeding.
+
+
+1.alembic revision --autogenerate -m "add user_id to x (x= In which table ?? )
+2.alembic upgrade head
