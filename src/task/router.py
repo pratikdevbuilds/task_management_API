@@ -32,4 +32,4 @@ def update_task(body:TaskSchema,task_id:int,db=Depends(get_db),user:UserModel=De
 
 @task_routes.delete("/delet_data/{task_id}",status_code=status.HTTP_204_NO_CONTENT)
 def del_task(task_id:int,db=Depends(get_db),user:UserModel=Depends(user_authorization)):
-  return controller.del_task(task_id,db)
+  return controller.del_task(task_id,db,user)

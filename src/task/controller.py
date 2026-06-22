@@ -31,13 +31,11 @@ def get_taskby_ones(task_id:int,db:session,user:UserModel):
 def update_task(body:TaskSchema,task_id:int,db:session,user:UserModel):
   #  new_task= db.query(TaskModel).get(task_id)
    new_task:TaskModel=db.get(TaskModel, task_id)
-   print(new_task.id)
-   print(new_task.user_id)
-   print(user.id)
+ 
    if not new_task:
     raise HTTPException(404,detail="Task id is not available" )
    
-   if new_task.id != user.id:
+   if new_task.user_id != user.id:
     
     raise HTTPException(401,detail="you are not allow to chenges" )
      
@@ -58,10 +56,16 @@ def update_task(body:TaskSchema,task_id:int,db:session,user:UserModel):
    db.refresh(new_task)
    return {"status":"the Task Fetched and updated ","data":new_task}
 
-def del_task(task_id:int,db:session):
+def del_task(task_id:int,db:session,user:UserModel):
   del_data = db.get(TaskModel,task_id)
+  
+  if del_data.user_id != user.id:
+    
+    raise HTTPException(401,detail="you are not allow to delete this task " )
+
   if not del_data:
     raise HTTPException(404,detail="Task id or data is not available" )
+  
   db.delete(del_data)
   db.commit()
   # return {"status":"The Task Deleted Successfully" }
