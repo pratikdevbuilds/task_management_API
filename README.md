@@ -39,6 +39,7 @@ This project is created to practice backend development using FastAPI, SQLAlchem
 
 ---
 
+
 ## Tech Stack 🛠️
 
 - Python
@@ -56,7 +57,6 @@ This project is created to practice backend development using FastAPI, SQLAlchem
 ## Project Structure 📂
 
  ```text
-
 task_management_API
 │
 ├── src
@@ -83,6 +83,13 @@ task_management_API
 ├── requirements.txt
 └── README.md
 ```
+## Authentication Flow 🔐
+
+1. Register user
+2. Login user
+3. Receive JWT token
+4. Send token in Authorization header
+5. Access protected APIs
 ---
 # API Documentation 📖
 
@@ -118,8 +125,7 @@ http://127.0.0.1:8000/docs
 
 ## 1. Clone Repository
 
-https://github.com/pratikdevbuilds/task_management_API
-
+git clone https://github.com/pratikdevbuilds/task_management_API.git
 
 ## 2. Go inside project folder
 
@@ -128,7 +134,9 @@ cd task_management_API
 
 ## 3. Create virtual environment
 
+```bash
 python -m venv env
+```
 
 
 ## 4. Activate virtual environment
@@ -163,4 +171,9 @@ uvicorn main:app --reload
  
 Now open:
 
+Swagger UI:
+
+/docs endpoint
+
+Example:
 http://127.0.0.1:8000/docs
