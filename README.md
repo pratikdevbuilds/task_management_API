@@ -55,6 +55,8 @@ This project is created to practice backend development using FastAPI, SQLAlchem
 
 ## Project Structure 📂
 
+ ```text
+
 task_management_API
 │
 ├── src
@@ -80,6 +82,7 @@ task_management_API
 ├── main.py
 ├── requirements.txt
 └── README.md
+```
 ---
 # API Documentation 📖
 
